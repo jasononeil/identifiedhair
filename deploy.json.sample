@@ -1,0 +1,58 @@
+{
+	"files": [
+		".htaccess",
+		"backgroundsize.min.htc",
+		"index.php",
+		"simple_html_dom.php",
+		"PIE.htc",
+		"PIE_IE9.js",
+		"PIE_IE678.js",
+		"js/",
+		"css/",
+		"img/",
+		"php/",
+		"font/",
+		"view/"
+	],
+	"targets": [
+		{
+			"name": "DEV",
+			"gitRepo": "ssh://jason@rackspace/var/www/identified/repo-dev.git",
+			"defines": [],
+			"hxmls": ["server"],
+			"debug": false,
+			"servers": [{
+				"name": "identified.jasono.co",
+				"user": "jason",
+				"host": "rackspace",
+				"port": 22,
+				"remoteDir": "/var/www/identified/dev/"
+			}]
+		},
+		{
+			"name": "LIVE",
+			"gitRepo": "ssh://jason@rackspace/var/www/identified/repo-www.git",
+			"defines": [],
+			"hxmls": ["server"],
+			"debug": false,
+			"servers": [{
+				"name": "identifiedhair.com",
+				"user": "jason",
+				"host": "rackspace",
+				"port": 22,
+				"remoteDir": "/var/www/identified/www/"
+			}]
+		}
+	],
+	"hooks": {
+		"beforeBuild": [],
+		"afterBuild": [],
+		"beforeCopy": [],
+		"afterCopy": [],
+		"beforePush": [],
+		"afterPush": [],
+		"beforePull": [],
+		"afterPull": [],
+		"afterComplete": []
+	}
+}
