@@ -1,6 +1,5 @@
--lib ufront:1.0.0-rc.2
-# haxelib git erazor https://github.com/waneck/erazor.git
--lib erazor
+-lib ufront-mvc:1.0.0-rc.5
+-lib erazor:1.0.0-rc.1
 -cp src
 -D server
 

@@ -9,6 +9,7 @@ deploy.json
 haxelibs
 .sass-cache
 /notes
+linkedprojects
 
 # Generated files
 /www/index.php
