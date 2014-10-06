@@ -1,0 +1,37 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+// Variable and Mixin definitions
+
+// Vendor Imports
+@import "vendor/twitter/bootstrap/_bootstrap";
+@import "vendor/_bootstraptheme";
+@import "compass/css3/images";
+@import "compass/css3/box-shadow";
+
+// App Imports
+@import "app/_layout";
+@import "app/_fonts";
+@import "app/_typography";
+@media (min-width: $screen-md) {
+	@import "app/desktop/_layout";
+	@import "app/desktop/_backgrounds";
+}
+@media (max-width: $screen-sm-max) {
+	@import "app/mobile/_layout";
+	@import "app/mobile/_backgrounds";
+}
+
+// General imports
+@import "general/_print-utilities";
+.btn {
+	outline: 0 !important;
+}
+
+// Feature Specific Imports
+@import "features/_team";
+
+// User Agent specific imports
+@import "user-agent/_mobile-webkit";

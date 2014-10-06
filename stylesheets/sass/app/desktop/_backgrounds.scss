@@ -1,0 +1,18 @@
+.mobile-img {
+	display: none;
+}
+body {
+	background-image: url("/img/bg/illustration-no-fingerprint.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: right top;
+	-ms-behavior: url(/backgroundsize.min.htc);
+	-ms-behavior: url(/PIE.htc);
+	&.home { background-image: url("/img/bg/illustration-with-fingerprint.jpg"); }
+	&.news { background-image: url("/img/bg/girl-facing-right.jpg"); }
+	&.about-salon { background-image: url("/img/bg/chelsea.jpg"); }
+	&.about-team { background-image: url("/img/bg/hair-above.jpg"); }
+	&.about-team-judith-dierden { background-image: url("/img/bg/jude.jpg"); }
+	&.gallery { background-image: url("/img/bg/jude.jpg"); }
+	&.contact { background-image: url("/img/bg/illustration-no-fingerprint.jpg"); }
+}

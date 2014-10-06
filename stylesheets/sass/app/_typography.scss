@@ -1,0 +1,63 @@
+.navbar-brand {
+	font-family: Reflex;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.navbar-nav, .sidebar-nav {
+	li {
+		font-family: Oceania;
+		font-weight: 400;
+		font-size: 20px;
+		text-transform: uppercase;
+		&.active {
+			font-weight: bold;
+		}
+	}
+}
+
+h1 {
+	font-family: Reflex;
+	font-weight: normal;
+	font-style: normal;
+}
+
+h2, h3, h4 {
+	font-family: Oceania;
+	font-weight: bold;
+	font-style: normal;
+	text-transform: uppercase;
+}
+
+h2 {
+	color: rgb(242,101,34);
+}
+h3 {
+	color: rgb(239,62,35);
+}
+
+span.heading {
+	font-weight: bold;
+}
+
+.big-link {
+	color: rgb(242,101,34);
+	font-size: 16px;
+	&:hover {
+		color: rgb(239,62,35);
+		text-decoration: none;
+	}
+	&.right {
+		display: block;
+		text-align: right;
+		&:after {
+			content: ">>";
+		}
+	}
+}
+
+body, p, td {
+	font-family: Oceania;
+	font-weight: 400;
+	font-style: normal;
+}

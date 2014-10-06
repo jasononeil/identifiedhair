@@ -1,0 +1,26 @@
+html {
+	height: 100%;
+	width: 100%;
+}
+
+.jumbotron {
+	background: white;
+}
+
+.footer {
+	text-align: center;
+	color: rgb(0, 0, 0);
+	font-size: 0.7em;
+}
+
+.contact-details {
+	font-family: Reflex;
+	font-weight: normal;
+	font-style: normal;
+	list-style: none;
+	@include clearfix;
+}
+
+a:hover {
+	text-decoration: none;
+}

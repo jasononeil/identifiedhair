@@ -1,0 +1,22 @@
+body {
+	padding: 50px 0 0 0;
+}
+.contact-details {
+	padding: 0;
+	margin-top: 20px;
+	border-bottom: 1px rgb(200,200,200) solid;
+	a {
+		display: block;
+		min-height: 2em;
+		font-size: 1.4em;
+		padding: 10px 0;
+		border-top: 1px rgb(200,200,200) solid;
+	}
+	a {
+		color: rgb(80,80,80);
+		&:hover {
+			color: rgb(0,0,0);
+			text-decoration: none;
+		}
+	}
+}

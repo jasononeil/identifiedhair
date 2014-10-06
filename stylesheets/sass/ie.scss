@@ -1,0 +1,30 @@
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
+
+// Variable and Mixin definitions
+@import "user-agent/_ie8vars";
+
+// Vendor Imports
+@import "vendor/twitter/bootstrap/_bootstrap";
+@import "vendor/_bootstraptheme";
+@import "compass/css3/images";
+@import "compass/css3/box-shadow";
+
+// App Imports
+@import "app/mobile/_layout";
+@import "app/mobile/_backgrounds";
+
+// General imports
+@import "general/_print-utilities";
+.btn {
+	outline: 0 !important;
+}
+
+// Feature Specific Imports
+@import "features/_team";
+
+// User Agent specific imports
+@import "user-agent/_ie8changes";

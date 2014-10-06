@@ -1,0 +1,17 @@
+body.home .mobile-img { background-image: url("/img/bg/illustration-with-fingerprint.jpg"); }
+body.news .mobile-img { background-image: url("/img/bg/hair-above.jpg"); }
+body.about-salon .mobile-img { background-image: url("/img/bg/chelsea.jpg"); }
+body.about-team .mobile-img { background-image: url("/img/bg/chelsea.jpg"); }
+body.about-team-judith-dierden .mobile-img { background-image: url("/img/bg/jude.jpg"); }
+body.gallery .mobile-img { background-image: url("/img/bg/jude.jpg"); }
+body.contact .mobile-img { background-image: url("/img/bg/illustration-no-fingerprint.jpg"); }
+
+.mobile-img {
+	width: 100%;
+	height: 230px;
+	background-image: url("/img/bg/illustration-no-fingerprint.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	-ms-behavior: url(/backgroundsize.min.htc);
+	-ms-behavior: url(/PIE.htc);
+}
