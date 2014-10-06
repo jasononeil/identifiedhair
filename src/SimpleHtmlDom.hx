@@ -1,5 +1,12 @@
 import php.*;
 
+/**
+	SimpleHtmlDom is a PHP utility for scraping web data, even from badly formed pages.
+	This extern provides access to the tool from Haxe.
+	You must have the "simple_html_dom.php" file in your "www/" directory for this to work.
+
+	Please note these externs are not complete - they just provide enough for what I was trying to accomplish.
+**/
 extern class SimpleHtmlDom {
 
 	static inline var DEFAULT_TARGET_CHARSET = "UTF-8";

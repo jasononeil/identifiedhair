@@ -5,8 +5,15 @@ import ufront.view.*;
 import SiteData;
 using StringTools;
 
+/**
+	This class is the main controller for our site, and also has the `main` entry point function.
+**/
 class Site extends Controller {
 
+	/**
+		The entry-point for our ufront app.
+		PHP will start executing here, and use this class as our main controller.
+	**/
 	static function main() {
 		new UfrontApplication({
 			indexController: Site,
@@ -16,13 +23,16 @@ class Site extends Controller {
 		.executeRequest();
 	}
 
+	//
+	// Member variables
+	//
+
+	// All APIs are available through dependency injection, let's inject our (only) API.
 	@inject public var api:SiteDataApi;
 
-	@:route("/import/")
-	public function doImport() {
-		api.importFromHairSalon();
-		return "done";
-	}
+	//
+	// Routes
+	//
 
 	@:route("/")
 	public function home() {
@@ -31,6 +41,12 @@ class Site extends Controller {
 			bgClass: "home",
 			menuItems: getMenuItems()
 		} );
+	}
+
+	@:route("/import/")
+	public function doImport() {
+		api.importFromHairSalon();
+		return "Done!";
 	}
 
 	@:route("/news/")
@@ -72,14 +88,6 @@ class Site extends Controller {
 		} );
 	}
 
-	function getProfiles():Map<String,Profile> {
-		var profiles = new Map();
-		for ( profile in api.loadFromJson().profiles ) {
-			profiles.set( profile.url, profile );
-		}
-		return profiles;
-	}
-
 	@:route("/about/team/$name/")
 	public function profile( name:String ) {
 		var profile = getProfiles().get( name );
@@ -102,6 +110,18 @@ class Site extends Controller {
 			bgClass: 'contact',
 			openHours: api.loadFromJson().openHours,
 		} );
+	}
+
+	//
+	// Private methods
+	//
+
+	function getProfiles():Map<String,Profile> {
+		var profiles = new Map();
+		for ( profile in api.loadFromJson().profiles ) {
+			profiles.set( profile.url, profile );
+		}
+		return profiles;
 	}
 
 	function getProfileDir():String {

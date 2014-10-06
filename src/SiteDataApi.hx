@@ -8,8 +8,12 @@ import ufront.sys.SysUtil;
 import SiteData;
 using StringTools;
 
+/**
+	A simple API to help load our SiteData from JSON, scrape content from another web service etc.
+**/
 class SiteDataApi extends UFApi {
 
+	/** The contentDirectory is the path to a directory that ufront has write-permissions for. We'll save our data there. **/
 	@inject("contentDirectory") public var contentDir:String;
 
 	public function loadFromJson():SiteData {
@@ -83,7 +87,7 @@ class SiteDataApi extends UFApi {
 		return days;
 	}
 
-	static function arr(native:php.NativeArray):Iterable<SimpleHtmlDomNode> {
+	function arr(native:php.NativeArray):Iterable<SimpleHtmlDomNode> {
 		return php.Lib.hashOfAssociativeArray( native );
 	}
 }

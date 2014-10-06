@@ -1,3 +1,6 @@
+/**
+	A summary of all the data on the site.
+**/
 typedef SiteData = {
 	homepage:String,
 	newsText:String,
@@ -8,6 +11,9 @@ typedef SiteData = {
 	openHours:Array<OpenHours>,
 }
 
+/**
+	An individual staff profile.
+**/
 typedef Profile = {
 	url:String,
 	name:String,
@@ -15,12 +21,18 @@ typedef Profile = {
 	bio:String,
 }
 
+/**
+	Opening hours information for a given day.
+**/
 typedef OpenHours = {
 	day:String,
 	open:String,
 	close:String
 }
 
+/**
+	A link to a news article.
+**/
 typedef NewsLink = {
 	text:String,
 	link:String
