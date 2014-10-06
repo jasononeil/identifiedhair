@@ -1,0 +1,12 @@
+-lib ufront:1.0.0-rc.2
+# haxelib git erazor https://github.com/waneck/erazor.git
+-lib erazor
+-cp src
+-D server
+
+-main Site
+
+# PHP
+--remap neko:php
+--php-lib php/
+-php www/
