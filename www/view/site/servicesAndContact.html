@@ -1,0 +1,29 @@
+<div class="text-wrapper">
+	<h2>Salon Services</h2>
+
+	<p><strong>At Identified Hair, we offer a full range of salon services.</strong></p>
+
+	<p>Please download our menu of services for more detailed information or call the salon to book a consultation.</p>
+
+	<p><a href="#" class="big-link"><i class="fa fa-file-pdf-o"></i> MENU OF SERVICES</a></p>
+
+	<h2>Opening Hours and Contact</h2>
+
+	<p>For appointments please call <strong>08 9367 2009</strong></p>
+
+	<table>
+		<thead>
+			<tr>
+				<th colspan="2">Opening Hours</th>
+			</tr>
+		</thead>
+		<tbody>
+			@for( hours in openHours ) {
+				<tr>
+					<td><strong>@hours.day</strong></td>
+					<td>@hours.open - @hours.close</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

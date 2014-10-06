@@ -1,0 +1,19 @@
+<div class="text-wrapper">
+	<h2>Our Team</h2>
+	
+	<ul class="team-thumbnails clearfix">
+		@for( profile in profiles ) {
+			<li>
+				<a href="/about/team/@profile.url/">
+					<div class="crop"><img src="@(profileDir)@(profile.url).jpg" title="@profile.name" alt="Photo of @profile.name" /></div>
+					<h3>@profile.name</h3>
+					<p>@profile.position</p>
+				</a>
+			</li>
+		}
+	</ul>
+
+	<p>Click on a team member to read their profile.</p>
+	
+	<p><a href="/about/" class="big-link right">Our Salon</a></p>
+</div>
