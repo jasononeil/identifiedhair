@@ -18,6 +18,9 @@ A preview of the site is available on http://identified.jasono.co/
 * To run a sample server use `cd www; php -S localhost:8000`. The `router.php` file is needed to emulate mod_rewrite pretty URLs.
 * All stylesheets are in `stylesheets/sass/`, and you use `./runstyles` to compile them to `www/css/*.css`.
 * I have chosen to avoid using a database to keep this simple and portable. Instead all data is saved to files in `www/uf-content/`
+* There is a very basic admin page at `/idh-admin/`, using simple HTTP authentication and the `SiteAdminController`.
+* There's an example of file uploads in the `SiteAdminController`.
+* If you run `./rundocs`, you get browseable API documentation for all code, both for this site, ufront libraries, and the standard library. 
 * To deploy, you set up `deploy.json` with the correct repos and server details, and run `ufront d`.
 
 ### Getting it running
