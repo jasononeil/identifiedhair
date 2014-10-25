@@ -1,7 +1,12 @@
 #!/bin/sh
 
-mkdir -p dox/api/
+mkdir -p doc/api/
 
-cd dox
-haxelib run dox -r /api -i . -o api/ --title "Transition" -in . -ex Test$
-nekotools server -rewrite -p 2001
+rm -Rf api/*
+
+cd doc/php/
+haxelib run dox -i . -o api/ --title "SMS Server (php)" -in . -ex Test$
+cd -
+
+cd doc/
+nekotools server -p 2001

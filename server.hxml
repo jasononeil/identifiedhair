@@ -9,3 +9,4 @@
 --remap neko:php
 --php-lib php/
 -php www/
+-xml doc/php/php.xml

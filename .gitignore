@@ -4,6 +4,7 @@
 
 # Config Files
 deploy.json
+src/siteconf.json
 
 # Misc development files
 haxelibs
@@ -17,3 +18,4 @@ linkedprojects
 /www/css/
 /deploy/
 /www/uf-content/
+/doc/
