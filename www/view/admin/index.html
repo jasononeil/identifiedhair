@@ -1,0 +1,86 @@
+<form action="/idh-admin/save/" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
+	@{
+		var saveToolbar = '<div class="btn-toolbar">
+			<input type="submit" class="btn btn-primary" value="Save changes" />
+			<input type="reset" class="btn btn-danger" value="Reset all changes" />
+		</div>';
+		function input(name,title,inputHTML) {
+			return '<div class="form-group">
+				<label for="'+name+'" class="col-sm-2 control-label">'+title+'</label>
+				<div class="col-sm-10">
+					'+inputHTML+'
+				</div>
+			</div>';
+		}
+		function wysiwygInput(name,title,content) {
+			var textarea = '<textarea name="'+name+'" id="'+name+'">'+content+'</textarea>
+			<script type="text/javascript">
+				CKEDITOR.replace( "'+name+'" );
+			</script>';
+			return input(name,title,textarea);
+		}
+		function textInput(name,title,placeholder,value) {
+			var inputHTML = '<input type="text" class="form-control" id="'+name+'" name="'+name+'" placeholder="eg. '+placeholder+'" value="'+value+'">';
+			return input(name,title,inputHTML);
+		}
+		function urlInput(name,title,addon,placeholder,value) {
+			var inputHTML = '<div class="input-group">
+				<div class="input-group-addon">'+addon+'</div>
+				<input type="text" class="form-control" id="'+name+'" name="'+name+'" placeholder="eg. '+placeholder+'" value="'+value+'">
+			</div>';
+			return input(name,title,inputHTML);
+		}
+		function fileInput(name,title) {
+			var inputHTML = '<input type="file" id="'+name+'" name="'+name+'">';
+			var instruction = "<p class='help-block'>Please select a file to upload. If you don't choose one we'll keep using the old file.</p>";
+			return input(name,title,inputHTML+instruction);
+		}
+	}
+	
+	@saveToolbar
+	
+	<fieldset class="well">
+		<h1>Contact Details</h1>
+		@textInput("address","Address","eg. 32 Kennard St, Kensington WA 6151",contactDetails.address)
+		@textInput("phone","Phone","(08) 9367 2008",contactDetails.phone)
+		@textInput("email","Email","jude@identifiedhair.com",contactDetails.email)
+		@urlInput("website","Website","http://","identifiedhair.com",contactDetails.website)
+		@urlInput("facebook","Facebook","http://facebook.com/","identified.hair",contactDetails.facebook)
+	</fieldset>
+	
+	
+	<fieldset class="well">
+		<h1>Homepage</h1>
+		@textInput("homeTitle","Home Title","eg. About The Salon",homepage.title)
+		@wysiwygInput("homeContent","Home Content",homepage.content)
+	</fieldset>
+	
+	<fieldset class="well">
+		<h1>News</h1>
+		@fileInput('news','News PDF')
+	</fieldset>
+	
+	<fieldset class="well">
+		<h1>About the Salon</h1>
+		@textInput("aboutSalonTitle","About Salon Title","eg. About The Salon",aboutOurSalon.title)
+		@wysiwygInput("aboutSalonContent","About Salon Content",aboutOurSalon.content)
+	</fieldset>
+	
+	<fieldset class="well">
+		<h1>About the Team</h1>
+		@input('','Biographies',"<p class='form-control-static'>To edit the team biographies, please update them on <a href='http://hairsalon.com.au/'>hairsalon.com.au</a>, then hit 'save' on this page.</p>")
+	</fieldset>
+	
+	<fieldset class="well">
+		<h1>Gallery</h1>
+		@input('','Photos',"<p class='form-control-static'>To edit the gallery please change the photos on <a href='http://facebook.com'>Facebook</a>.  It's best if there's exactly 24 photos. They should update immediately.</p>")
+	</fieldset>
+	
+	<fieldset class="well">
+		<h1>Services and Contact</h1>
+		@input('','Open Hours',"<p class='form-control-static'>To edit the opening hours, please update them on <a href='http://hairsalon.com.au/'>hairsalon.com.au</a>, then hit 'save' on this page.</p>")
+		@fileInput('menu','Menu PDF')
+	</fieldset>
+	
+	@saveToolbar
+</form>

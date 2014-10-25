@@ -1,14 +1,58 @@
 /**
+	The default data if our JSON fails to load.
+**/
+class DefaultSiteData {
+	public static var defaults = {
+		contactDetails: {
+			address:"",
+			phone:"",
+			phoneNoSpaces:"",
+			email:"",
+			website:"",
+			facebook:""
+		},
+		homepage: {
+			title:"",
+			content:""
+		},
+		aboutOurSalon: {
+			title:"",
+			content:""
+		},
+		profiles: [],
+		openHours: [],
+	}
+}
+
+/**
 	A summary of all the data on the site.
 **/
 typedef SiteData = {
-	homepage:String,
-	newsText:String,
-	newsLinks:Array<NewsLink>,
-	aboutOurSalon:String,
+	contactDetails:ContactDetails,
+	homepage:Page,
+	aboutOurSalon:Page,
 	profiles:Array<Profile>,
-	servicesAndContact:String,
 	openHours:Array<OpenHours>,
+}
+
+/**
+	A simple page with a title and HTML content.
+**/
+typedef Page = {
+	title:String,
+	content:String
+}
+
+/**
+	The contact details for the salon.
+**/
+typedef ContactDetails = {
+	address:String,
+	phone:String,
+	phoneNoSpaces:String,
+	email:String,
+	website:String,
+	facebook:String
 }
 
 /**

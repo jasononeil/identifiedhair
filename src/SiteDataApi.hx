@@ -15,29 +15,27 @@ class SiteDataApi extends UFApi {
 
 	/** The contentDirectory is the path to a directory that ufront has write-permissions for. We'll save our data there. **/
 	@inject("contentDirectory") public var contentDir:String;
-
+	
+	var data:SiteData;
+	
 	public function loadFromJson():SiteData {
-		try {
-			var json = File.getContent( contentDir+"siteData.json" );
-			return Json.parse( json );
-		}
-		catch ( e:Dynamic ) {
-			// Return an empty default.
-			return {
-				homepage: "",
-				newsText: "",
-				newsLinks: [],
-				aboutOurSalon: "",
-				profiles: [],
-				servicesAndContact: "",
-				openHours: [],
+		if ( data==null ) {
+			try {
+				data = Json.parse( File.getContent(contentDir+"siteData.json") );
+				if ( data==null )
+					throw 'Null';
+			}
+			catch ( e:Dynamic ) {
+				// Return an empty default.
+				data = DefaultSiteData.defaults;
 			}
 		}
+		return data;
 	}
 
 	public function saveToJson( data:SiteData ) {
-		var json = Json.stringify( data );
-		File.saveContent( contentDir+"siteData.json", json );
+		File.saveContent( contentDir+"siteData.json", Json.stringify(data) );
+		this.data = data;
 	}
 
 	/**
