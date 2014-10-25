@@ -28,10 +28,13 @@ A preview of the site is available on http://identified.jasono.co/
 * `git clone https://github.com/jasononeil/identifiedhair.git`
 * `cd identifiedhair/`
 * `haxelib install all`
+* `cp src/siteconf.json.sample src/siteconf.json` and edit your settings.
 * `haxe server.hxml`
-* `./runstyles`
+* `mkdir -p doc/php`
+* `./runstyles` (You will need to press Ctrl+C to stop when it's done.)
+* `cd www`
 * `php -S localhost:8000`
-* Open http://localhost:8000/import/ to scrape some data from another website
+* Open http://localhost:8000/idh-admin/ and login to set up the initial data.
 * Open http://localhost:8000/ to view the site!
 
 ### Deploying
